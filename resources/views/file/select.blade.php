@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+@extends('layouts.app')
 @section('content')
     <div class="pt-2 text-center">
         <h2 class="text-primary">{{ $category_select->name }}</h2>

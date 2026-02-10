@@ -61,19 +61,42 @@
                 </div>
             </div>
         </div>
+
+<!--        <ul class="nav flex-column mb-auto">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link d-flex align-items-center gap-2" href="#"-->
+<!--                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">-->
+<!--                    <svg class="bi"><use xlink:href="#door-closed"/></svg>-->
+<!--                    خروج-->
+<!--                </a>-->
+<!--                <form id="logout-form" :action="routes.logout" method="POST" class="d-none">-->
+<!--                    @csrf-->
+<!--                </form>-->
+<!--            </li>-->
+<!--        </ul>-->
+
     </div>
 </template>
 
-<script setup>
-const recentProjects = [
-    { id: 1, title: 'پروژه باغ ویلایی', status: 'در حال اجرا' },
-    { id: 2, title: 'سیستم روشنایی بانک', status: 'تکمیل شده' },
-    { id: 3, title: 'نمای ساختمان اداری', status: 'در انتظار تایید' },
-]
 
-const notifications = [
-    { id: 1, text: 'پروژه جدیدی برای شما ثبت شد.' },
-    { id: 2, text: 'مدارک پروژه شماره 124 تایید شد.' },
-    { id: 3, text: 'پرداخت جدید انجام شد.' },
-]
+<script>
+export default {
+    name: "Home",
+    data() {
+        return {
+            assets: window.assets,
+            routes: window.routes,
+            recentProjects: [
+                { id: 1, title: 'پروژه باغ ویلایی', status: 'در حال اجرا' },
+                { id: 2, title: 'سیستم روشنایی بانک', status: 'تکمیل شده' },
+                { id: 3, title: 'نمای ساختمان اداری', status: 'در انتظار تایید' },
+            ],
+            notifications: [
+                { id: 1, text: 'پروژه جدیدی برای شما ثبت شد.' },
+                { id: 2, text: 'مدارک پروژه شماره 124 تایید شد.' },
+                { id: 3, text: 'پرداخت جدید انجام شد.' },
+            ]
+        };
+    }
+};
 </script>

@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+@extends('layouts.app')
 @section('content')
     <div class="pt-2 text-center">
         <h5 class="text-primary">{{ $category_select->parent->name }} > {{ $category_select->name }}</h5>

@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+@extends('layouts.app')
 @section('content')
     <div class="py-2 text-center">
         <h5 class=""> جستجو ... </h5>
