@@ -17,7 +17,7 @@
             </form>
         </div>
     <br>
-    
+
     <script>
         window.assets = {
             profile: "{{ asset('images/app/mansory.jpg') }}",
