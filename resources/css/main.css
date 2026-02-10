@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Persain';
+    src: url('/fonts/fac.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'English';
+    src: url('/fonts/ena.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    height: 100%;
+    font-family: 'Persain', sans-serif !important;
+}
+
+.farsi {
+    font-family: 'Persain', sans-serif;
+}
+
+.english {
+    font-family: 'English', sans-serif;
+}
