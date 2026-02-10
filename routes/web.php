@@ -37,7 +37,6 @@ Route::post('/email/verification-notification', function (Request $r) {
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
-Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/post/{post}', [HomeController::class, 'post'])->name('post');
 /*
 |--------------------------------------------------------------------------
