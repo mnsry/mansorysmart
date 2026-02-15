@@ -27,7 +27,8 @@ onMounted(() => {
     //socket = io('http://localhost:3000')
 
     socket = io("https://sskh.ir", {
-        withCredentials: true
+        path: "/socket.io",
+        transports: ["websocket"]
     })
 
     socket.on('connect', () => {
