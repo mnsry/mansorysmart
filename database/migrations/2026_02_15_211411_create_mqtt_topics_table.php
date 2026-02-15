@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade' );
-            $table->string('topic', 20);
+            $table->string('topic', 50);
+            $table->string('name', 50);
             $table->enum('direction', ['publish', 'subscribe']);
             $table->timestamps();
         });
