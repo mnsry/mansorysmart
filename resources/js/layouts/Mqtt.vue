@@ -63,7 +63,7 @@ let forcedDelayTimeout: any = null
 
 /* ---------------- INIT ---------------- */
 onMounted(() => {
-    socket = io('http://localhost:3000', { auth: { token: Home.socket } })
+    socket = io('https://socket.sskh.ir', { auth: { token: Home.socket } })
 
     /* ---------------- SOCKET ---------------- */
     socket.on('connect', () => {
