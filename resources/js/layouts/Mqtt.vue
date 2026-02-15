@@ -26,10 +26,10 @@ let socket: any = null
 onMounted(() => {
     //socket = io('http://localhost:3000')
 
-    socket = io("https://sskh.ir", {
+    const socket = io("wss://sskh.ir", {
         path: "/socket.io",
         transports: ["websocket"]
-    })
+    });
 
     socket.on('connect', () => {
         console.log('Connected to Node.js Socket.io')
