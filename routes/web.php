@@ -43,25 +43,28 @@ Route::get('/post/{post}', [HomeController::class, 'post'])->name('post');
 | Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/search', [SearchController::class, 'search'])->name('search');
-Route::get('/search/select', [SearchController::class, 'searchSelect'])->name('search.select');
-Route::get('/search/show-fields', [SearchController::class, 'searchShowFields'])->name('search.show.fields');
-Route::get('/search/select-field', [SearchController::class, 'searchSelectField'])->name('search.select.field');
-Route::get('/search/find', [SearchController::class, 'searchFind'])->name('search.find');
-Route::get('/file/select', [FileController::class, 'select'])->name('file.select');
-Route::put('file/{file}/like', [FileController::class, 'like'])->name('file.like');
-Route::put('file/{file}/shekar', [FileController::class, 'shekar'])->name('file.shekar');
-Route::resource('file', FileController::class);
-Route::get('/user', [HomeController::class, 'user'])->name('user');
-Route::post('/user', [HomeController::class, 'userUpdate'])->name('user.update');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/search', [SearchController::class, 'search'])->name('search');
+    Route::get('/search/select', [SearchController::class, 'searchSelect'])->name('search.select');
+    Route::get('/search/show-fields', [SearchController::class, 'searchShowFields'])->name('search.show.fields');
+    Route::get('/search/select-field', [SearchController::class, 'searchSelectField'])->name('search.select.field');
+    Route::get('/search/find', [SearchController::class, 'searchFind'])->name('search.find');
+    Route::get('/file/select', [FileController::class, 'select'])->name('file.select');
+    Route::put('file/{file}/like', [FileController::class, 'like'])->name('file.like');
+    Route::put('file/{file}/shekar', [FileController::class, 'shekar'])->name('file.shekar');
+    Route::resource('file', FileController::class);
+    Route::get('/user', [HomeController::class, 'user'])->name('user');
+    Route::post('/user', [HomeController::class, 'userUpdate'])->name('user.update');
+    //
+    Route::get('/home', [HomeController::class, 'home'])->name('home');
+    Route::get('/panel', [HomeController::class, 'panel'])->name('panel');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('/panel', [HomeController::class, 'panel'])->name('panel');
-
 Route::middleware(['auth'])->prefix('panel')->group(function () {
     Route::get('/dashboard', [PartnerController::class, 'dashboard'])->name('dashboard');
     Route::get('/projects', [PartnerController::class, 'projects'])->name('projects');
