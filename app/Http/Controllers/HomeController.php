@@ -58,9 +58,14 @@ class HomeController extends Controller
         return view('welcome');
     }
 
+    public function panel()
+    {
+        return view('home.panel');
+    }
+
     public function post(Post $post)
     {
-        return view('partnerWelcome',[
+        return view('home.home',[
             'post' => $post,
         ]);
     }

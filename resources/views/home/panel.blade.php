@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="app">
-        <App />
+    <div id="app-mqtt">
+        <Mqtt />
     </div>
 
     <script>
@@ -11,7 +11,7 @@
         }
         window.routes = {
 {{--            post: "{{ route('post', ['post' => '__ID__']) }}",--}}
-            login: "{{ route('login') }}",
+            welcome: "{{ route('welcome') }}",
         };
     </script>
 @endsection

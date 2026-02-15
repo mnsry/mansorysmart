@@ -13,9 +13,9 @@
                         <p class="card-text small text-muted flex-grow-1">
                             {{ feature.description }}
                         </p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto">
+                        <a class="btn btn-sm btn-outline-primary mt-auto" :href="routes.panel">
                             ورود
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -23,11 +23,20 @@
     </div>
 </template>
 
-<script setup>
-const features = [
-    { id: 1, title: 'مدیریت پروفایل', description: 'ویرایش اطلاعات کاربری و رمز عبور', icon: 'bi bi-person-circle' },
-    { id: 2, title: 'ثبت پروژه جدید', description: 'ارسال پروژه برای بررسی و اجرا', icon: 'bi bi-plus-circle' },
-    { id: 3, title: 'پیگیری وضعیت', description: 'مشاهده وضعیت پروژه‌ها', icon: 'bi bi-bar-chart-line' },
-    { id: 4, title: 'پشتیبانی', description: 'ارسال تیکت و پیام به پشتیبانی', icon: 'bi bi-headset' },
-]
+<script>
+export default {
+    data() {
+        return {
+            routes: window.routes,
+            features: [
+                { id: 1, title: 'پنل MQTT', description: 'مدیریت سخت افزار پروژه', icon: 'bi bi-server' },
+                { id: 2, title: 'مدیریت پروفایل', description: 'ویرایش اطلاعات کاربری و رمز عبور', icon: 'bi bi-person-circle' },
+                { id: 3, title: 'ثبت پروژه جدید', description: 'ارسال پروژه برای بررسی و اجرا', icon: 'bi bi-plus-circle' },
+                { id: 4, title: 'پیگیری وضعیت', description: 'مشاهده وضعیت پروژه‌ها', icon: 'bi bi-bar-chart-line' },
+                { id: 5, title: 'پشتیبانی', description: 'ارسال تیکت و پیام به پشتیبانی', icon: 'bi bi-headset' }
+            ]
+        };
+    }
+};
+
 </script>

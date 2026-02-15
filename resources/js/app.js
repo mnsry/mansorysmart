@@ -9,5 +9,8 @@ import { createApp } from "vue";
 import app from "./layouts/App.vue";
 createApp(app).mount("#app");
 
-import appPanel from './layouts/AppPanel.vue'
-createApp(appPanel).mount('#app-panel')
+import AppPanel from './layouts/AppPanel.vue'
+createApp(AppPanel).mount('#app-panel')
+
+import Mqtt from './layouts/Mqtt.vue'
+createApp(Mqtt).mount('#app-mqtt')

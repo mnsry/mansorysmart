@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="app-panel">
-        <AppPanel/>
+        <AppPanel />
     </div>
 
     <br>
@@ -25,6 +25,7 @@
         window.routes = {
             {{--            post: "{{ route('post', ['post' => '__ID__']) }}",--}}
             logout: "{{ route('logout') }}",
+            panel: "{{ route('panel') }}",
         };
     </script>
 @endsection
