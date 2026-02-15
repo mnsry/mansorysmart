@@ -24,7 +24,11 @@ const Home = window.routes
 let socket: any = null
 
 onMounted(() => {
-    socket = io('https://nodejs-app.chbk.dev/')
+    //socket = io('http://localhost:3000')
+
+    socket = io("https://sskh.ir", {
+        withCredentials: true
+    })
 
     socket.on('connect', () => {
         console.log('Connected to Node.js Socket.io')
