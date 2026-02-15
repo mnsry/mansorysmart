@@ -24,12 +24,7 @@ const Home = window.routes
 let socket: any = null
 
 onMounted(() => {
-    //socket = io('http://localhost:3000')
-
-    const socket = io("wss://sskh.ir", {
-        path: "/socket.io",
-        transports: ["websocket"]
-    });
+    socket = io('https://socket.sskh.ir')
 
     socket.on('connect', () => {
         console.log('Connected to Node.js Socket.io')
