@@ -6,29 +6,46 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'PersainIrani';
     src: url('/fonts/fad.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'English';
     src: url('/fonts/ena.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-html, body {font-family: 'Persain', sans-serif !important;}
-.farsi {font-family: 'Persain', sans-serif;}
+
+/* Webkit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 0 ;
+}
+
+html, body {
+    font-family: 'Persain', sans-serif !important;
+}
+
+.farsi {
+    font-family: 'Persain', sans-serif;
+}
+
 .farsi2 {
     font-family: 'PersainIrani', sans-serif;
-    font-size: 2rem;                  /* درشت‌تر از h4 معمولی */
-    color: #1d68b3;                     /* رنگ پایه نقره‌ای */
-    font-weight: bold;                 /* ضخامت فونت */
-    text-shadow: 0 0 5px #fff,        /* درخشندگی سفید */
-    0 0 10px #ccc;
+    font-size: 2rem;
+    color: darkblue;
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
 }
-.english {font-family: 'English', sans-serif;}
+
+.english {
+    font-family: 'English', sans-serif;
+}
+
 .form-signin {
     max-width: 330px;
     padding: 1rem;

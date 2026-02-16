@@ -3,7 +3,7 @@
 @section('content')
     <script>
         window.assets = {
-            profile: "{{ asset('images/app/mansory.jpg') }}",
+            profile: "{{ asset('images/app/mansory.png') }}",
         }
         window.routes = {
             {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}

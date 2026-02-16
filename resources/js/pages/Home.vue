@@ -3,7 +3,7 @@
 
         <!-- عکس -->
         <img :src="assets.profile"
-             class="rounded-4 mb-3 vcard-photo"
+             class="rounded-5 mb-3 vcard-photo"
              alt="mansory">
 
         <!-- نام -->
