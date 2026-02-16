@@ -13,15 +13,53 @@ return new class extends Migration
     {
         Schema::create('mqtt_topics', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade' );
-            $table->string('topic', 50);
+            // مالک تاپیک
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            // ترتیب نمایش در پنل
+            $table->integer('order')->default(1);
+            // آیا این تاپیک لاگ شود؟
+            $table->boolean('log_enabled')->default(false);
+            // نام نمایشی در پنل
             $table->string('name', 50);
-            $table->enum('direction', ['publish', 'subscribe']);
+            // نام واقعی تاپیک در MQTT
+            $table->string('topic', 50);
+            /*
+                direction:
+                0 = subscribe (دریافت از دستگاه)
+                1 = publish (ارسال به دستگاه)
+            */
+            //$table->enum('direction', ['publish', 'subscribe']);
+            $table->tinyInteger('direction');
+            /*
+                data_type:
+                0 = bit (0/1)
+                1 = word (عدد)
+            */
+            //$table->enum('value', ['bit', 'word']);
+            $table->tinyInteger('bit_word');
+            /*
+                display_type (برای word):
+                0 = number
+                1 = chart
+                2 = progress
+            */
+            //$table->enum('form_publish_word', ['number', 'chart', 'progress'])->default('number');
+            $table->tinyInteger('publish_word')->nullable();
+            // فقط برای word — جهت progress یا validation
+            $table->integer('subscribe_min_value')->nullable();
+            $table->integer('subscribe_max_value')->nullable();
+            // فقط برای bit
+            $table->string('publish_icon_on')->nullable();
+            $table->string('publish_icon_off')->nullable();
+            // فعال/غیرفعال بودن تاپیک
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            // هر کاربر می‌تواند topic مشابه کاربر دیگر داشته باشد
+            $table->unique(['user_id', 'topic']);
+            $table->index('user_id');
         });
-    }
 
+    }
     /**
      * Reverse the migrations.
      */
