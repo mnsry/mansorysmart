@@ -1,33 +1,45 @@
 <template>
-    <body class="d-flex flex-column justify-content-center align-items-center">
-        <!-- لوگو -->
-        <img :src="assets.profile" alt="لوگو" class="mb-3 rounded-circle" style="width:120px; height:120px; object-fit:cover;">
+    <div class="vcard-wrapper">
 
-        <!-- نام و عنوان -->
-        <h2 class="mb-1">مسعود</h2>
-        <a class="english" :href="routes.login">click</a>
-        <p class="text-muted mb-3">مهندس نرم‌افزار | طراح وب | مشاور فناوری</p>
+        <!-- عکس -->
+        <img :src="assets.profile"
+             class="rounded-4 mb-3 vcard-photo"
+             alt="mansory">
 
-        <!-- شبکه‌های اجتماعی -->
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="#" class="btn btn-outline-info btn-sm" target="_blank">
-                <i class="bi bi-twitter"></i>
-            </a>
-            <a href="#" class="btn btn-outline-primary btn-sm" target="_blank">
-                <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-outline-danger btn-sm" target="_blank">
-                <i class="bi bi-youtube"></i>
-            </a>
+        <!-- نام -->
+        <h4 class="fw-bold farsi2">منصوری</h4>
+
+        <!-- تخصص -->
+        <p class="text-secondary small mt-3">
+            مهندس نرم افزار | برق صنعتی و اتوماسیون | <span class="english fw-bold">IOT</span> صنعتی
+        </p>
+
+        <!-- شبکه‌ها -->
+        <div class="row g-2 mt-3">
+            <div class="col-4">
+                <a href="https://youtube.com/@mansorysmart" class="btn btn-outline-danger w-100 rounded-3 d-flex justify-content-center align-items-center" style="height:50px;" target="_blank">
+                    <i class="bi bi-youtube fs-4"></i>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://t.me/+989153903097" class="btn btn-outline-primary w-100 rounded-3 d-flex justify-content-center align-items-center" style="height:50px;" target="_blank">
+                    <i class="bi bi-telegram fs-4"></i>
+                </a>
+            </div>
+            <div class="col-4">
+
+                <a href="tel:09153903097" class="btn btn-outline-success w-100 rounded-3 d-flex justify-content-center align-items-center" style="height:50px;">
+                    <i class="bi bi-telephone fs-4"></i>
+                </a>
+            </div>
         </div>
 
-        <!-- توضیح کوتاه یا شعار -->
-        <p class="mt-3 text-secondary text-center">ارائه تخصص و خدمات با کیفیت برای شما</p>
+        <!-- توضیح کوتاه -->
+        <div class="vcard-about mt-4">
+            راهکارهای هوشمند صنعتی ، اتصال و مدیریت دستگاه‌ها ، جمع آوری و تحلیل داده ها بهینه‌سازی زیرساخت‌ها با فناوری نوین
+        </div>
 
-    </body>
+    </div>
 </template>
 
 <script>

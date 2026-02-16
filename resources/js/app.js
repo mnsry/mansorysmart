@@ -6,11 +6,16 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { createApp } from "vue";
 
-import app from "./layouts/App.vue";
-createApp(app).mount("#app");
-
+import welcome from "./layouts/Welcome.vue";
+if (document.getElementById('welcome')) {
+    createApp(welcome).mount("#welcome");
+}
 import AppPanel from './layouts/AppPanel.vue'
-createApp(AppPanel).mount('#app-panel')
+if (document.getElementById('app-panel')) {
+    createApp(AppPanel).mount('#app-panel')
+}
 
 import Mqtt from './layouts/Mqtt.vue'
-createApp(Mqtt).mount('#app-mqtt')
+if (document.getElementById('app-mqtt')) {
+    createApp(Mqtt).mount('#app-mqtt')
+}

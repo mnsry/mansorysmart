@@ -1,17 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="app">
-        <App />
-    </div>
-
     <script>
         window.assets = {
             profile: "{{ asset('images/app/mansory.jpg') }}",
         }
         window.routes = {
-{{--            post: "{{ route('post', ['post' => '__ID__']) }}",--}}
+            {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}
             login: "{{ route('login') }}",
         };
     </script>
+
+    <div id="welcome"></div>
 @endsection

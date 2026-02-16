@@ -4,7 +4,8 @@
     <!-- CSRF Token -->
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'BMS | هوشمندسازی ساختمان و برق صنعتی')</title>
@@ -54,7 +55,7 @@
     @vite('resources/js/app.js')
     @laravelPWA
 </head>
-<body>
-    @yield('content')
-</body>
+    <body>
+        @yield('content')
+    </body>
 </html>

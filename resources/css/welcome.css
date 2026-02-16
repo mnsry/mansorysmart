@@ -1,0 +1,46 @@
+/* پس زمینه ساده روشن (کارت ویزیت واقعی‌تر) */
+.vcard-wrapper {
+    max-width: 380px;
+    margin: auto;
+    padding: 30px 25px;
+    text-align: center;
+}
+
+/* عکس گرد بزرگ */
+.vcard-photo {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #1d68b3;
+}
+
+/* زیرعنوان */
+.vcard-subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* لینک‌های شبکه */
+.vcard-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    font-size: 22px;
+    color: #212529;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.vcard-link:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+/* توضیح */
+.vcard-about {
+    font-size: 0.85rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
