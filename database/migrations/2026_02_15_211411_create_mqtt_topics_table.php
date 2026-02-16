@@ -28,29 +28,27 @@ return new class extends Migration
                 0 = subscribe (دریافت از دستگاه)
                 1 = publish (ارسال به دستگاه)
             */
-            //$table->enum('direction', ['publish', 'subscribe']);
-            $table->tinyInteger('direction');
+            $table->boolean('direction')->default(false);
+
             /*
                 data_type:
                 0 = bit (0/1)
                 1 = word (عدد)
             */
-            //$table->enum('value', ['bit', 'word']);
-            $table->tinyInteger('bit_word');
+            $table->boolean('bit_word')->default(false);
             /*
                 display_type (برای word):
                 0 = number
                 1 = chart
                 2 = progress
             */
-            //$table->enum('form_publish_word', ['number', 'chart', 'progress'])->default('number');
-            $table->tinyInteger('publish_word')->nullable();
-            // فقط برای word — جهت progress یا validation
-            $table->integer('subscribe_min_value')->nullable();
-            $table->integer('subscribe_max_value')->nullable();
+            $table->tinyInteger('publish_word')->default(0);
+
+            $table->integer('word_min_value')->nullable();
+            $table->integer('word_max_value')->nullable();
             // فقط برای bit
-            $table->string('publish_icon_on')->nullable();
-            $table->string('publish_icon_off')->nullable();
+            $table->string('publish_icon_on',  100)->nullable();
+            $table->string('publish_icon_off', 100)->nullable();
             // فعال/غیرفعال بودن تاپیک
             $table->boolean('is_active')->default(true);
             $table->timestamps();
