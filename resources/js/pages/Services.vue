@@ -1,5 +1,6 @@
 <template>
     <div class="container-fluid instagram-profile">
+
         <div class="profile-header">
             <img class="avatar" :src="assets.story" alt="Masoud">
             <div class="profile-info">
@@ -27,25 +28,49 @@
                 <span>اجرای پروژه‌های صنعتی از ۱۳۸۹</span>
             </p>
             <p class="small">📍 مشهد | همکاری پروژه‌ای و فاکتوری</p>
-
         </div>
 
         <!-- Skills as Stories -->
         <div class="highlights d-flex overflow-auto">
-            <div class="highlight-item d-flex flex-column align-items-center" v-for="(skill, index) in skills" :key="index">
+            <div class="highlight-item d-flex flex-column align-items-center"
+                 v-for="(skill, index) in skills" :key="skill.name">
                 <img :src="skill.icon" alt="mansory"/>
                 <small class="text-center">{{ skill.name }}</small>
             </div>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="posts">
-            <div class="post" v-for="project in projects" :key="project.title">
-                <img class="" :src="project.image" alt="mansory">
-                <div class="overlay">
-                    <h5>{{ project.title }}</h5>
-                </div>
+        <div class="post-tabs">
+            <div class="tabs-wrapper">
+                <button :class="{ active: activeTab === 'images' }" @click="activeTab = 'images'">
+                    <i class="bi bi-image"></i>
+                </button>
+                <button :class="{ active: activeTab === 'videos' }" @click="activeTab = 'videos'">
+                    <i class="bi bi-camera-video"></i>
+                </button>
             </div>
+        </div>
+        <div class="posts">
+            <template v-for="project in filteredProjects" :key="project.id">
+                <!-- اگر عکس بود -->
+                <div v-if="project.category === 'images'" class="post">
+                    <img :src="project.image" alt="mansory">
+                    <div class="overlay">
+                        <h5>{{ project.title }}</h5>
+                    </div>
+                </div>
+                <!-- اگر ویدیو بود -->
+                <div v-else class="video-wrapper">
+                    <div class="card video-card">
+                        <video controls preload="metadata" class="card-img-top">
+                            <source :src="project.video" type="video/mp4">
+                        </video>
+                        <div class="card-body">
+                            <h6 class="card-title">{{ project.title }}</h6>
+                            <p class="card-text small">{{ project.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
         </div>
 
     </div>
@@ -54,8 +79,10 @@
 <script>
 export default {
     data() {
+        const assets = window.assets;
+
         return {
-            assets: window.assets,
+            assets,
             skills: [
                 { name: "PLC", icon: assets.plc },
                 { name: "HMI", icon: assets.hmi },
@@ -69,15 +96,29 @@ export default {
                 { name: "MQTT", icon: assets.mqtt },
 
             ],
+            activeTab: 'images',
             projects: [
-                { id: 1, title: "تابلو برق صنعتی", image: assets.test },
-                { id: 2, title: "اتوماسیون خط تولید", image: assets.test },
-                { id: 3, title: "کنترل CNC", image: assets.test },
-                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: assets.test }
+                { id: 1, category: 'images', title: "تابلو برق صنعتی", image: assets.post1 },
+                { id: 2, category: 'images', title: "اتوماسیون دستگاه", image: assets.post2 },
+                { id: 3, category: 'images', title: "خط لوله پلی اتیلن", image: assets.post3 },
+                { id: 4, category: 'images', title: "سیستم BMS", image: assets.post4 },
+                { id: 5, category: 'images', title: "کنترل از راه دور MQTT", image: assets.post5 },
+                { id: 6, category: 'images', title: "هوشمندسازی موتورخانه", image: assets.post6 },
+                // video
+                { id: 7, category: 'videos', title: "سیستم BMS", video: assets.vid1, desc: "اجرای کامل سیستم هوشمند سازی ساختمان" },
+                { id: 8, category: 'videos', title: "کنترل MQTT", video: assets.vid2, desc: "کنترل از راه دور با بروکر MQTT" },
             ]
         };
+    },
+
+    computed: {
+        filteredProjects() {
+            return this.projects.filter(
+                p => p.category === this.activeTab
+            );
+        }
     }
-};
+}
 </script>
 
 <style scoped>
@@ -121,15 +162,6 @@ export default {
     font-size: 11px;
     color: #aaa;
 }
-
-/* خط جداکننده عمودی */
-.divider {
-    width: 1px;
-    height: 35px;
-    background: linear-gradient(to bottom, transparent, #444, transparent);
-    opacity: 0.4;
-}
-
 .buttons {
     display: flex;
     gap: 10px;
@@ -147,11 +179,6 @@ export default {
 .secondary {
     background: #2a2a30;
     color: #fff;
-}
-.bio {
-    margin: 20px 0;
-    font-size: 14px;
-    line-height: 1.6;
 }
 .bio-section {
     margin-bottom: 15px;
@@ -173,45 +200,45 @@ export default {
     height: 65px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #0c26ca;
+    border: 3px solid #0c26ca;
 }
-.about-box {
-    background: #f8f9fa;
-    padding: 15px;
+.post-tabs {
+    justify-content: center;
+    margin-top: 20px;
+}
+.tabs-wrapper {
+    display: flex;
     border-radius: 12px;
-    font-size: 14px;
 }
-.posts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+.tabs-wrapper button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #0c26ca;
+    transition: .15s ease;
 }
-.post img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
+.post-tabs button.active {
+    border-bottom: 2px solid #6366f1;
 }
-
-/* Posts */
+.post-tabs button i {
+    font-size: 20px;
+}
 .posts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-top: 20px;
+    gap: 5px;
+    margin-top: 10px;
 }
-
 .post {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
 }
-
 .post img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 250px;
+    object-fit: fill;
 }
-
 .overlay {
     position: absolute;
     bottom: 0;
@@ -219,6 +246,20 @@ export default {
     padding: 6px;
     background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
     font-size: 12px;
+    color: silver;
+}
+.video-wrapper {
+    grid-column: 1 / -1;
+}
+.video-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+.video-card video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 </style>
 

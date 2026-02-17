@@ -15,7 +15,14 @@
             node: "{{ asset('images/story/node.png') }}",
             github: "{{ asset('images/story/github.png') }}",
             mqtt: "{{ asset('images/story/mqtt.png') }}",
-            test: "{{ asset('images/post/test.jpg') }}",
+            post1: "{{ asset('images/post/1.jpg') }}",
+            post2: "{{ asset('images/post/2.jpg') }}",
+            post3: "{{ asset('images/post/3.jpg') }}",
+            post4: "{{ asset('images/post/4.jpg') }}",
+            post5: "{{ asset('images/post/5.jpg') }}",
+            post6: "{{ asset('images/post/6.jpg') }}",
+            vid1: "{{ asset('videos/01.mp4') }}",
+            vid2: "{{ asset('videos/02.mp4') }}",
         }
         window.routes = {
             {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}
