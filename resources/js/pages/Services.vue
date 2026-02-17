@@ -103,7 +103,7 @@
         <!-- Projects Grid -->
         <div class="posts">
             <div class="post" v-for="project in projects" :key="project.title">
-                <img :src="project.image">
+                <img class="" :src="project.image" alt="mansory">
                 <div class="overlay">
                     <h5>{{ project.title }}</h5>
                 </div>
@@ -127,10 +127,10 @@ export default {
                 { name: "Laravel", icon: "bi bi-code-slash" }
             ],
             projects: [
-                { id: 1, title: "تابلو برق صنعتی", image: "https://picsum.photos/400/400?1" },
-                { id: 2, title: "اتوماسیون خط تولید", image: "https://picsum.photos/400/400?2" },
-                { id: 3, title: "کنترل CNC", image: "https://picsum.photos/400/400?3" },
-                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: "https://picsum.photos/400/400?4" }
+                { id: 1, title: "تابلو برق صنعتی", image: assets.banner },
+                { id: 2, title: "اتوماسیون خط تولید", image: assets.banner },
+                { id: 3, title: "کنترل CNC", image: assets.banner },
+                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: assets.banner }
             ]
         };
     }
