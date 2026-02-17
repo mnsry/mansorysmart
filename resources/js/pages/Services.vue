@@ -1,5 +1,5 @@
 <template>
-    <div class="instagram-profile">
+    <div class="container instagram-profile">
 
                 <div class="profile-header">
                     <img class="avatar" :src="assets.story" alt="Masoud">
@@ -139,7 +139,7 @@ export default {
 
 <style scoped>
 .instagram-profile {
-    max-width: 430px;
+    max-width: 450px;
     margin: auto;
     padding: 15px;
     font-family: sans-serif;
