@@ -1,88 +1,269 @@
 <template>
-    <div class="services-wrapper d-flex flex-column vh-100">
+    <div class="instagram-profile">
 
-        <!-- عنوان صفحه -->
-        <h2 class="mb-4 text-center mt-3">رزومه و خدمات مسعود منصوری</h2>
+                <div class="profile-header">
+                    <img class="avatar" :src="assets.story" alt="Masoud">
+                    <div class="profile-info">
+                        <h2>Masoud Mansouri</h2>
+                        <p class="title">Electrical Engineer | PLC & Automation</p>
+                        <div class="stats">
+                            <div><strong>15+</strong><span>Years</span></div>
+                            <div><strong>50+</strong><span>Projects</span></div>
+                            <div><strong>IOT</strong><span>Support</span></div>
+                        </div>
+                        <div class="buttons">
+                            <a href="tel:09153903097" class="btn primary">تماس</a>
+                            <a href="https://t.me/+989153903097" class="btn secondary">تلگرام</a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="flex-fill px-3 pb-3">
-            <!-- اطلاعات شخصی -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>اطلاعات شخصی</h5>
-                <ul class="list-unstyled mb-0">
-                    <li>📌 نام: مسعود منصوری</li>
-                    <li>📌 تخصص: مهندس برق</li>
-                    <li>📌 محل: مشهد، استان خراسان رضوی</li>
-                    <li>📌 ایمیل: mansory.php@gmail.com</li>
-                    <li>📌 تلفن: ۰۹۱۵۳۹۰۳۰۹۷</li>
-                    <li>📌 تاریخ تولد: ۱۳۷۱/۲/۶</li>
-                    <li>📌 وضعیت: متاهل، آقا، معافیت</li>
-                    <li>📌 حداقل حقوق درخواستی: توافقی</li>
-                </ul>
-            </div>
 
-            <!-- سوابق کاری -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>سوابق کاری</h5>
-                <p>مجری پروژه‌های صنعتی از سال ۱۳۸۹ تا کنون، همکاری فاکتوری و پروژه‌ای با دستگاه‌سازان و شرکت‌های مختلف.</p>
-                <ul>
-                    <li>برق صنعتی و اتوماسیون</li>
-                    <li>هوشمندسازی و اینترنت صنعتی (IoT)</li>
-                    <li>مونتاژ و طراحی تابلو برق</li>
-                    <li>مشاوره فنی و مدیریت پروژه</li>
-                </ul>
-            </div>
+<!--                <div class="bio">-->
+<!--                    متخصص برق صنعتی، PLC و HMI Programming-->
+<!--                    اجرای BMS و IoT با MQTT-->
+<!--                    طراحی مدار، مونتاژ تابلو، راه‌اندازی CNC-->
+<!--                </div>-->
 
-            <!-- مهارت‌ها -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>مهارت‌ها</h5>
-                <ul class="list-unstyled">
-                    <li>PLC Programming و HMI Programming</li>
-                    <li>مونتاژ تابلو برق و برق صنعتی</li>
-                    <li>PHP و Laravel</li>
-                    <li>IOT و اتوماسیون صنعتی</li>
-                    <li>مشاوره فنی و مدیریت پروژه</li>
-                </ul>
-            </div>
+        <!-- Header -->
+<!--        <div class="profile-header d-flex align-items-center">-->
+<!--            <img :src="assets.profile" class="avatar" />-->
+<!--            <div class="stats d-flex flex-fill justify-content-around">-->
+<!--                <div>-->
+<!--                    <strong>50+</strong>-->
+<!--                    <div class="small">پروژه</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <strong>17+</strong>-->
+<!--                    <div class="small">سال تجربه</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <strong>Industrial</strong>-->
+<!--                    <div class="small">Tech</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-            <!-- تحصیلات -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>تحصیلات</h5>
-                <p>کاردانی برق الکترونیک – شهید محمد منتظری مشهد (فنی و حرفه‌ای) – معدل ۱۵ (۱۳۸۸-۱۳۹۱)</p>
-            </div>
+        <div class="bio-section mt-2">
+<!--            <h6 class="mb-1">مسعود منصوری | مهندس برق</h6>-->
 
-            <!-- پروژه‌ها -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>نمونه پروژه‌ها</h5>
-                <ul>
-                    <li>برق صنعتی و ساخت تابلو برای دستگاه‌های تزریق پلاستیک، دوخت، پرس، بتن، اره و موتورخانه‌ها</li>
-                    <li>اتوماسیون و برنامه‌نویسی PLC و HMI، نصب و راه‌اندازی سروو درایو و اینورترها</li>
-                    <li>هوشمندسازی ساختمان‌ها و کنترل از راه دور با اینترنت صنعتی (IoT) و بروکر MQTT</li>
-                    <li>پنل خورشیدی: محاسبات، نصب و راه‌اندازی سیستم‌ها</li>
-                    <li>آموزش خصوصی مدار فرمان، WinProladder، WPLSOFT، DOPSOFT و Arduino</li>
-                </ul>
-            </div>
+            <p class="small text-muted mb-2">
+                برق صنعتی • اتوماسیون • اینترنت صنعتی
+                PLC & HMI Programming
+                اجرای پروژه‌های صنعتی از ۱۳۸۹
+            </p>
 
-            <!-- توضیحات -->
-            <div class="mb-3 p-3 border rounded">
-                <h5>توضیحات</h5>
-                <p>
-                    ارائه خدمات تخصصی در برق صنعتی و هوشمندسازی با رویکرد فنی و قابل اعتماد.
-                    طراحی و اجرای سیستم‌ها، مشاوره فنی، عیب‌یابی، کانفیگ انواع سروو درایو و اینورتر، مونتاژ تابلو و کنترل CNC.
-                    پذیرش پروژه‌های فاکتوری و همکاری صنعتی.
-                </p>
+            <p class="small">📍 مشهد | همکاری پروژه‌ای و فاکتوری</p>
+
+<!--            <div class="d-grid gap-2">-->
+<!--                <a href="tel:09153903097" class="btn btn primary">-->
+<!--                    📞 تماس مستقیم-->
+<!--                </a>-->
+
+<!--                <a href="mailto:mansory.php@gmail.com" class="btn btn secondary">-->
+<!--                    ✉ ارسال ایمیل-->
+<!--                </a>-->
+<!--            </div>-->
+        </div>
+
+        <!-- Skills as Stories -->
+        <div class="highlights d-flex overflow-auto mt-4">
+            <div class="highlight-item" v-for="(skill, index) in skills" :key="index">
+                <img :src="assets.icon" alt="mansory"/>
+                <small>{{ skill.name }}</small>
             </div>
         </div>
+
+        <!-- About Section -->
+        <!--        <div class="about-box">-->
+        <!--            <h6>درباره من</h6>-->
+        <!--            <p>-->
+        <!--                از سال ۱۳۸۹ وارد صنعت شدم و در حوزه برق صنعتی، اتوماسیون و هوشمندسازی فعالیت دارم.-->
+        <!--                همکاری با دستگاه‌سازان و شرکت‌های مختلف به‌صورت پروژه‌ای و فاکتوری.-->
+        <!--            </p>-->
+
+        <!--            <h6 class="mt-3">تحصیلات</h6>-->
+        <!--            <p>-->
+        <!--                کاردانی برق الکترونیک-->
+        <!--                شهید محمد منتظری مشهد (دانشگاه ملی مهارت)-->
+        <!--                معدل ۱۵-->
+        <!--            </p>-->
+
+        <!--            <h6 class="mt-3">مهارت‌ها</h6>-->
+        <!--            <ul>-->
+        <!--                <li>PLC & HMI Programming</li>-->
+        <!--                <li>برق صنعتی و مونتاژ تابلو</li>-->
+        <!--                <li>راه‌اندازی سروو درایو و اینورتر</li>-->
+        <!--                <li>کنترل CNC (برند GSK)</li>-->
+        <!--                <li>PHP & Laravel</li>-->
+        <!--                <li>Internet of Things (IoT)</li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+
+        <!-- Projects Grid -->
+        <div class="posts">
+            <div class="post" v-for="project in projects" :key="project.title">
+                <img :src="project.image">
+                <div class="overlay">
+                    <h5>{{ project.title }}</h5>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
 <script>
 export default {
-    name: "Services",
     data() {
         return {
             assets: window.assets,
-            routes: window.routes
+            skills: [
+                { name: "PLC", icon: "bi bi-cpu" },
+                { name: "HMI", icon: "bi bi-display" },
+                { name: "برق صنعتی", icon: "bi bi-lightning-charge" },
+                { name: "اتوماسیون", icon: "bi bi-gear" },
+                { name: "IoT صنعتی", icon: "bi bi-wifi" },
+                { name: "Laravel", icon: "bi bi-code-slash" }
+            ],
+            projects: [
+                { id: 1, title: "تابلو برق صنعتی", image: "https://picsum.photos/400/400?1" },
+                { id: 2, title: "اتوماسیون خط تولید", image: "https://picsum.photos/400/400?2" },
+                { id: 3, title: "کنترل CNC", image: "https://picsum.photos/400/400?3" },
+                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: "https://picsum.photos/400/400?4" }
+            ]
         };
     }
 };
 </script>
+
+<style scoped>
+.instagram-profile {
+    max-width: 430px;
+    margin: auto;
+    padding: 15px;
+    font-family: sans-serif;
+}
+.profile-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain ;
+    border: 3px solid  #6366f1;
+    margin-right: 5px;
+}
+.profile-info h2 {
+    margin: 0;
+}
+.title {
+    color: #aaa;
+    font-size: 13px;
+}
+.stats {
+    display: flex;
+    gap: 18px;
+    margin: 8px 0;
+}
+.stats div {
+    text-align: center;
+    font-size: 13px;
+}
+.stats span {
+    display: block;
+    font-size: 11px;
+    color: #aaa;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+.btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+}
+.primary {
+    background: #6366f1;
+    color: #fff;
+}
+.secondary {
+    background: #2a2a30;
+    color: #fff;
+}
+.bio {
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.bio-section {
+    margin-bottom: 15px;
+}
+.highlights {
+    gap: 15px;
+}
+.highlights::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+}
+.highlight-item {
+    text-align: center;
+}
+.highlight-item img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+.about-box {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+.post img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Posts */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.post {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 6px;
+    background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
+    font-size: 12px;
+}
+</style>
+

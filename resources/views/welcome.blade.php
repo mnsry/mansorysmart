@@ -4,6 +4,8 @@
     <script>
         window.assets = {
             profile: "{{ asset('images/app/mansory.png') }}",
+            story: "{{ asset('images/app/a.png') }}",
+            icon: "{{ asset('images/app/icon.png') }}",
         }
         window.routes = {
             {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}
