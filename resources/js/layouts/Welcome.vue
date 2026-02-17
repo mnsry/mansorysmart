@@ -24,11 +24,11 @@
                     <div class="small mt-1">خدمات</div>
                 </div>
 
-                <div class="text-center" @click="currentTab = 'Store'">
-                    <i class="bi bi-cart-fill"
-                       :class="{'text-primary': currentTab==='Store'}"
+                <div class="text-center" @click="currentTab = 'Order'">
+                    <i class="bi bi-clipboard-plus-fill"
+                       :class="{'text-primary': currentTab==='Order'}"
                        style="font-size:1.3rem;"></i>
-                    <div class="small mt-1">فروشگاه</div>
+                    <div class="small mt-1">سفارش</div>
                 </div>
 
                 <div class="text-center" @click="currentTab = 'Features'">
@@ -47,11 +47,11 @@
 <script>
 import Home from '../pages/Home.vue'
 import Services from '../pages/Services.vue'
-import Store from '../pages/Store.vue'
+import Order from '../pages/Order.vue'
 import Features from '../pages/Features.vue'
 
 export default {
-    components: { Home, Services, Store, Features },
+    components: { Home, Services, Order, Features },
     data() {
         return {
             currentTab: 'Home',

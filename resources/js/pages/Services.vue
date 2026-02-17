@@ -1,104 +1,42 @@
 <template>
-    <div class="container instagram-profile">
-
-                <div class="profile-header">
-                    <img class="avatar" :src="assets.story" alt="Masoud">
-                    <div class="profile-info">
-                        <h2>Masoud Mansouri</h2>
-                        <p class="title">Electrical Engineer | PLC & Automation</p>
-                        <div class="stats">
-                            <div><strong>15+</strong><span>Years</span></div>
-                            <div><strong>50+</strong><span>Projects</span></div>
-                            <div><strong>IOT</strong><span>Support</span></div>
-                        </div>
-                        <div class="buttons">
-                            <a href="tel:09153903097" class="btn primary">تماس</a>
-                            <a href="https://t.me/+989153903097" class="btn secondary">تلگرام</a>
-                        </div>
-                    </div>
+    <div class="container-fluid instagram-profile">
+        <div class="profile-header">
+            <img class="avatar" :src="assets.story" alt="Masoud">
+            <div class="profile-info">
+                <h2>MANSORY SMART</h2>
+                <p class="title">Industrial IoT | PLC & Automation</p>
+                <div class="stats">
+                    <div><strong>15+</strong><span>سابقه</span></div>
+                    <div><strong>50+</strong><span>پروژه</span></div>
+                    <div><strong>Industrial</strong><span>کارشناس</span></div>
                 </div>
-
-
-<!--                <div class="bio">-->
-<!--                    متخصص برق صنعتی، PLC و HMI Programming-->
-<!--                    اجرای BMS و IoT با MQTT-->
-<!--                    طراحی مدار، مونتاژ تابلو، راه‌اندازی CNC-->
-<!--                </div>-->
-
-        <!-- Header -->
-<!--        <div class="profile-header d-flex align-items-center">-->
-<!--            <img :src="assets.profile" class="avatar" />-->
-<!--            <div class="stats d-flex flex-fill justify-content-around">-->
-<!--                <div>-->
-<!--                    <strong>50+</strong>-->
-<!--                    <div class="small">پروژه</div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <strong>17+</strong>-->
-<!--                    <div class="small">سال تجربه</div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <strong>Industrial</strong>-->
-<!--                    <div class="small">Tech</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <div class="bio-section mt-2">
-<!--            <h6 class="mb-1">مسعود منصوری | مهندس برق</h6>-->
-
-            <p class="small text-muted mb-2">
-                برق صنعتی • اتوماسیون • اینترنت صنعتی
-                PLC & HMI Programming
-                اجرای پروژه‌های صنعتی از ۱۳۸۹
-            </p>
-
-            <p class="small">📍 مشهد | همکاری پروژه‌ای و فاکتوری</p>
-
-<!--            <div class="d-grid gap-2">-->
-<!--                <a href="tel:09153903097" class="btn btn primary">-->
-<!--                    📞 تماس مستقیم-->
-<!--                </a>-->
-
-<!--                <a href="mailto:mansory.php@gmail.com" class="btn btn secondary">-->
-<!--                    ✉ ارسال ایمیل-->
-<!--                </a>-->
-<!--            </div>-->
-        </div>
-
-        <!-- Skills as Stories -->
-        <div class="highlights d-flex overflow-auto mt-4">
-            <div class="highlight-item" v-for="(skill, index) in skills" :key="index">
-                <img :src="assets.icon" alt="mansory"/>
-                <small>{{ skill.name }}</small>
+                <div class="buttons">
+                    <a href="tel:09153903097" class="btn primary">تماس</a>
+                    <a href="https://t.me/+989153903097" class="btn secondary">تلگرام</a>
+                </div>
             </div>
         </div>
 
-        <!-- About Section -->
-        <!--        <div class="about-box">-->
-        <!--            <h6>درباره من</h6>-->
-        <!--            <p>-->
-        <!--                از سال ۱۳۸۹ وارد صنعت شدم و در حوزه برق صنعتی، اتوماسیون و هوشمندسازی فعالیت دارم.-->
-        <!--                همکاری با دستگاه‌سازان و شرکت‌های مختلف به‌صورت پروژه‌ای و فاکتوری.-->
-        <!--            </p>-->
+        <div class="bio-section mt-2">
+            <h6 class="mb-1">مسعود منصوری | فناوری در خدمت صنعت</h6>
+            <p class="small text-muted mb-2">
+                <span> برق صنعتی • </span>
+                <span> طراحی مدار • </span>
+                <span> برنامه نویس صنعتی • </span>
+                <span> هوشمند سازی و IOT • </span>
+                <span>اجرای پروژه‌های صنعتی از ۱۳۸۹</span>
+            </p>
+            <p class="small">📍 مشهد | همکاری پروژه‌ای و فاکتوری</p>
 
-        <!--            <h6 class="mt-3">تحصیلات</h6>-->
-        <!--            <p>-->
-        <!--                کاردانی برق الکترونیک-->
-        <!--                شهید محمد منتظری مشهد (دانشگاه ملی مهارت)-->
-        <!--                معدل ۱۵-->
-        <!--            </p>-->
+        </div>
 
-        <!--            <h6 class="mt-3">مهارت‌ها</h6>-->
-        <!--            <ul>-->
-        <!--                <li>PLC & HMI Programming</li>-->
-        <!--                <li>برق صنعتی و مونتاژ تابلو</li>-->
-        <!--                <li>راه‌اندازی سروو درایو و اینورتر</li>-->
-        <!--                <li>کنترل CNC (برند GSK)</li>-->
-        <!--                <li>PHP & Laravel</li>-->
-        <!--                <li>Internet of Things (IoT)</li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
+        <!-- Skills as Stories -->
+        <div class="highlights d-flex overflow-auto">
+            <div class="highlight-item d-flex flex-column align-items-center" v-for="(skill, index) in skills" :key="index">
+                <img :src="skill.icon" alt="mansory"/>
+                <small class="text-center">{{ skill.name }}</small>
+            </div>
+        </div>
 
         <!-- Projects Grid -->
         <div class="posts">
@@ -119,18 +57,23 @@ export default {
         return {
             assets: window.assets,
             skills: [
-                { name: "PLC", icon: "bi bi-cpu" },
-                { name: "HMI", icon: "bi bi-display" },
-                { name: "برق صنعتی", icon: "bi bi-lightning-charge" },
-                { name: "اتوماسیون", icon: "bi bi-gear" },
-                { name: "IoT صنعتی", icon: "bi bi-wifi" },
-                { name: "Laravel", icon: "bi bi-code-slash" }
+                { name: "PLC", icon: assets.plc },
+                { name: "HMI", icon: assets.hmi },
+                { name: "IOT", icon: assets.iot },
+                { name: "SERVO", icon: assets.servo },
+                { name: "INVERTER", icon: assets.inverter },
+                { name: "CNC", icon: assets.cnc },
+                { name: "LARAVEL", icon: assets.laravel },
+                { name: "NODE", icon: assets.node },
+                { name: "GITHUB", icon: assets.github },
+                { name: "MQTT", icon: assets.mqtt },
+
             ],
             projects: [
-                { id: 1, title: "تابلو برق صنعتی", image: assets.banner },
-                { id: 2, title: "اتوماسیون خط تولید", image: assets.banner },
-                { id: 3, title: "کنترل CNC", image: assets.banner },
-                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: assets.banner }
+                { id: 1, title: "تابلو برق صنعتی", image: assets.test },
+                { id: 2, title: "اتوماسیون خط تولید", image: assets.test },
+                { id: 3, title: "کنترل CNC", image: assets.test },
+                { id: 4, title: "سیستم مانیتورینگ صنعتی", image: assets.test }
             ]
         };
     }
@@ -139,9 +82,9 @@ export default {
 
 <style scoped>
 .instagram-profile {
-    max-width: 450px;
+    max-width: 600px;
     margin: auto;
-    padding: 15px;
+    padding: 10px 2px 2px;
     font-family: sans-serif;
 }
 .profile-header {
@@ -166,8 +109,8 @@ export default {
 }
 .stats {
     display: flex;
-    gap: 18px;
-    margin: 8px 0;
+    gap: 30px;
+    margin: 15px 5px;
 }
 .stats div {
     text-align: center;
@@ -178,6 +121,15 @@ export default {
     font-size: 11px;
     color: #aaa;
 }
+
+/* خط جداکننده عمودی */
+.divider {
+    width: 1px;
+    height: 35px;
+    background: linear-gradient(to bottom, transparent, #444, transparent);
+    opacity: 0.4;
+}
+
 .buttons {
     display: flex;
     gap: 10px;
@@ -203,6 +155,7 @@ export default {
 }
 .bio-section {
     margin-bottom: 15px;
+    margin-right: 10px;
 }
 .highlights {
     gap: 15px;
@@ -211,6 +164,8 @@ export default {
     display: none;             /* Chrome, Safari, Opera */
 }
 .highlight-item {
+    min-width: 80px;          /* عرض ثابت برای هر هایلایت */
+    flex: 0 0 auto;
     text-align: center;
 }
 .highlight-item img {
@@ -218,7 +173,7 @@ export default {
     height: 65px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ccc;
+    border: 2px solid #0c26ca;
 }
 .about-box {
     background: #f8f9fa;
