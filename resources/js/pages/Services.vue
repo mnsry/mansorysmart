@@ -98,15 +98,13 @@ export default {
             ],
             activeTab: 'images',
             projects: [
-                { id: 1, category: 'images', title: "تابلو برق صنعتی", image: assets.post1 },
-                { id: 2, category: 'images', title: "اتوماسیون دستگاه", image: assets.post2 },
-                { id: 3, category: 'images', title: "خط لوله پلی اتیلن", image: assets.post3 },
-                { id: 4, category: 'images', title: "سیستم BMS", image: assets.post4 },
-                { id: 5, category: 'images', title: "کنترل از راه دور MQTT", image: assets.post5 },
-                { id: 6, category: 'images', title: "هوشمندسازی موتورخانه", image: assets.post6 },
+                { id: 1, category: 'images', title: "تابلو برق توزیع", image: assets.post1 },
+                { id: 2, category: 'images', title: "خط لوله پلی اتیلن", image: assets.post3 },
+                { id: 3, category: 'images', title: "اتوماسیون ...", image: assets.post2 },
+                { id: 4, category: 'images', title: "تابلو دستگاه فوم بتن", image: assets.post4 },
                 // video
-                { id: 7, category: 'videos', title: "سیستم BMS", video: assets.vid1, desc: "اجرای کامل سیستم هوشمند سازی ساختمان" },
-                { id: 8, category: 'videos', title: "کنترل MQTT", video: assets.vid2, desc: "کنترل از راه دور با بروکر MQTT" },
+                { id: 5, category: 'videos', title: "سیستم BMS", video: assets.vid1, desc: "اجرای کامل سیستم هوشمند سازی ساختمان" },
+                { id: 6, category: 'videos', title: "کنترل MQTT", video: assets.vid2, desc: "کنترل از راه دور با بروکر MQTT" },
             ]
         };
     },
@@ -239,6 +237,23 @@ export default {
     height: 250px;
     object-fit: fill;
 }
+.video-wrapper {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+.video-card {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+}
+.video-card video {
+    width: 100%;
+    height:auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
 .overlay {
     position: absolute;
     bottom: 0;
@@ -247,19 +262,6 @@ export default {
     background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
     font-size: 12px;
     color: silver;
-}
-.video-wrapper {
-    grid-column: 1 / -1;
-}
-.video-card {
-    border-radius: 12px;
-    overflow: hidden;
-}
-.video-card video {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
 }
 </style>
 
