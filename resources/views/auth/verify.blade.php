@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="d-flex align-items-center">
+    <div class="d-flex flex-column min-vh-100">
         <div class="form-signin w-100 m-auto">
-            <a class="btn w-100" href="{{ route('welcome') }}">کارگزاری املاک جرقه</a>
+            <a class="btn w-100" href="{{ route('welcome') }}">MANSORY SMART</a>
             @if (session('resent'))
                 <div class="mt-3 alert alert-success" role="alert">
                     {{ __('A fresh verification link has been sent to your email address.') }}
@@ -22,6 +22,6 @@
             <button class="btn btn-primary w-100 mb-3" type="submit" onclick="this.disabled=true;this.form.submit();">ارسال لینک</button>
         </form>
         </div>
-    </body>
+    </div>
 @endsection
 

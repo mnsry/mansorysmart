@@ -1,9 +1,9 @@
 <template>
     <div class="container py-4">
-        <h2 class="mb-3">امکانات</h2>
+        <h2 class="mb-4">فروشگاه</h2>
 
         <!-- آیکن‌های دایره‌ای با Bootstrap row/col -->
-        <div class="row mb-4 justify-content-start">
+        <div class="row justify-content-start">
             <div
                 v-for="(feature, index) in features"
                 :key="index"

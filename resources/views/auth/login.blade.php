@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="d-flex align-items-center">
+    <div class="d-flex flex-column min-vh-100">
         <div class="form-signin w-100 m-auto">
-            <a class="btn w-100" href="{{ route('welcome') }}">کارگزاری املاک جرقه</a>
+            <a class="btn w-100" href="{{ route('welcome') }}">MANSORY SMART</a>
             <form class="mt-4" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-floating">
@@ -42,5 +42,5 @@
             <a class="btn w-100" href="{{ route('password.request') }}">گذرواژه ام را فراموش کردم</a>
             <a class="btn w-100" href="{{ route('register') }}">ایجاد یک حساب جدید</a>
         </div>
-    </body>
+    </div>
 @endsection
