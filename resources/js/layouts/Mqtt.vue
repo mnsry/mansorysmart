@@ -4,7 +4,7 @@
 
         <div class="mt-3">
             <!-- انتخاب Topic -->
-            <label>Choose Topic to Publish:</label>
+            <label>انتخاب برای ارسال دیتا </label>
             <select v-model="selectedPublishTopic" class="form-select mb-2">
                 <option disabled value="">-- Select Topic --</option>
                 <option v-for="topic in publishTopics" :key="topic" :value="topic">
@@ -13,7 +13,7 @@
             </select>
 
             <!-- انتخاب مقدار -->
-            <label v-if="selectedPublishTopic">Set Value:</label>
+            <label v-if="selectedPublishTopic">انتخاب مقدار </label>
             <select v-model="selectedValue" class="form-select mb-2">
                 <option value="1">ON (1)</option>
                 <option value="0">OFF (0)</option>
@@ -25,7 +25,7 @@
                 class="btn btn-primary"
                 :disabled="!canSend || !selectedPublishTopic || !mqttConnected"
             >
-                {{ canSend ? 'Send' : 'Please wait...' }}
+                {{ canSend ? 'ارسال' : 'درحال ارسال ...' }}
             </button>
 
             <!-- وضعیت -->
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <h4 class="mt-4">Messages</h4>
+        <h4 class="mt-4">نمایش وضعیت</h4>
         <div v-for="(value, key) in messages" :key="key">
             <span :style="{ color: value === '1' ? 'green' : 'red' }">{{ key }} : {{ value }}</span>
         </div>
@@ -63,8 +63,8 @@ let forcedDelayTimeout: any = null
 
 /* ---------------- INIT ---------------- */
 onMounted(() => {
-    //socket = io('http://localhost:3000', { auth: { token: Home.socket } })
-    socket = io('https://socket.sskh.ir', { auth: { token: Home.socket } })
+    socket = io('http://localhost:3000', { auth: { token: Home.socket } })
+    // socket = io('https://socket.sskh.ir', { auth: { token: Home.socket } })
     /* ---------------- SOCKET ---------------- */
     socket.on('connect', () => {
         statusMessage.value = '✅ Connected to Socket Server'

@@ -25,24 +25,27 @@ return new class extends Migration
             $table->string('topic', 50);
             /*
                 direction:
-                0 = subscribe (دریافت از دستگاه)
-                1 = publish (ارسال به دستگاه)
+                0 = publish (ارسال به دستگاه)
+                1 = subscribe (دریافت از دستگاه)
             */
-            $table->boolean('direction')->default(false);
+            $table->enum('direction', ['publish', 'subscribe',])->default('publish');
+            //$table->boolean('direction')->default(false);
 
             /*
                 data_type:
                 0 = bit (0/1)
                 1 = word (عدد)
             */
-            $table->boolean('bit_word')->default(false);
+            $table->enum('type', ['bit', 'word',])->default('bit');
+            //$table->boolean('bit_word')->default(false);
             /*
                 display_type (برای word):
                 0 = number
                 1 = chart
                 2 = progress
             */
-            $table->tinyInteger('publish_word')->default(0);
+            $table->enum('publish_word', ['number', 'chart', 'progress',])->default('number');
+            //$table->tinyInteger('publish_word')->default(0);
 
             $table->integer('word_min_value')->nullable();
             $table->integer('word_max_value')->nullable();
