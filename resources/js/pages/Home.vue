@@ -11,7 +11,7 @@
 
         <!-- تخصص -->
         <p class="text-secondary small mt-3">
-            مهندس نرم افزار | برق صنعتی و اتوماسیون | <span class="english fw-bold">IOT</span> صنعتی
+            مهندس نرم افزار | برق صنعتی و اتوماسیون | <span class="english fw-bold">IoT/BMS</span>
         </p>
 
         <!-- شبکه‌ها -->
@@ -35,8 +35,12 @@
         </div>
 
         <!-- توضیح کوتاه -->
-        <div class="vcard-about mt-4">
+        <div class="vcard-about mt-4 mb-5">
             راهکارهای هوشمند صنعتی ، اتصال و مدیریت دستگاه‌ها ، جمع آوری و تحلیل داده ها بهینه‌سازی زیرساخت‌ها با فناوری نوین
+        </div>
+
+        <div class="text-primary english">
+            {{ time }}
         </div>
 
     </div>
@@ -49,7 +53,18 @@ export default {
         return {
             assets: window.assets,
             routes: window.routes,
+            time: ''
         };
+    },
+    mounted() {
+        this.updateTime();
+        setInterval(this.updateTime, 1000);
+    },
+    methods: {
+        updateTime() {
+            const now = new Date();
+            this.time = now.toLocaleTimeString(); // ساعت محلی
+        }
     }
 };
 </script>

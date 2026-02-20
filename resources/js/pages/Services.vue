@@ -12,25 +12,24 @@
                     <div><strong>Industrial</strong><span>کارشناس</span></div>
                 </div>
                 <div class="buttons">
-                    <a href="tel:09153903097" class="btn primary">تماس</a>
-                    <a href="https://t.me/+989153903097" class="btn secondary">تلگرام</a>
+                    <a href="tel:09153903097" class="btn2 primary2">تماس</a>
+                    <a href="https://t.me/+989153903097" class="btn2 secondary2">تلگرام</a>
                 </div>
             </div>
         </div>
 
-        <div class="bio-section mt-2">
+        <div class="bio-section mt-3">
             <h6 class="mb-1">مسعود منصوری | فناوری در خدمت صنعت</h6>
             <p class="small text-muted mb-2">
-                <span> برق صنعتی • </span>
+                📍<span> برق صنعتی • </span>
                 <span> طراحی مدار • </span>
                 <span> برنامه نویس صنعتی • </span>
-                <span> هوشمند سازی و IOT • </span>
+                <span> اتوماسیون سازی و IOT • </span>
                 <span>اجرای پروژه‌های صنعتی از ۱۳۸۹</span>
             </p>
-            <p class="small">📍 مشهد | همکاری پروژه‌ای و فاکتوری</p>
         </div>
 
-        <!-- Skills as Stories -->
+        <h6 class="small mb-1">📍  تخصص </h6>
         <div class="highlights d-flex overflow-auto">
             <div class="highlight-item d-flex flex-column align-items-center"
                  v-for="(skill, index) in skills" :key="skill.name">
@@ -41,25 +40,29 @@
 
         <div class="post-tabs">
             <div class="tabs-wrapper">
-                <button :class="{ active: activeTab === 'images' }" @click="activeTab = 'images'">
-                    <i class="bi bi-image"></i>
+                <button :class="{ active: activeTab === 'texts' }" @click="activeTab = 'texts'">
+                    <i class="bi bi-list"></i>
                 </button>
-                <button :class="{ active: activeTab === 'videos' }" @click="activeTab = 'videos'">
-                    <i class="bi bi-camera-video"></i>
+                <button :class="{ active: activeTab === 'media' }" @click="activeTab = 'media'">
+                    <i class="bi bi-view-list"></i>
+
                 </button>
             </div>
         </div>
         <div class="posts">
             <template v-for="project in filteredProjects" :key="project.id">
-                <!-- اگر عکس بود -->
-                <div v-if="project.category === 'images'" class="post">
-                    <img :src="project.image" alt="mansory">
-                    <div class="overlay">
-                        <h5>{{ project.title }}</h5>
+                <div v-if="project.category === 'texts'" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.desc }}</p>
                     </div>
                 </div>
                 <!-- اگر ویدیو بود -->
                 <div v-else class="video-wrapper">
+<!--                    <img :src="project.image" alt="mansory">-->
+<!--                    <div class="overlay">-->
+<!--                        <h5>{{ project.title }}</h5>-->
+<!--                    </div>-->
                     <div class="card video-card">
                         <video controls preload="metadata" class="card-img-top">
                             <source :src="project.video" type="video/mp4">
@@ -84,27 +87,38 @@ export default {
         return {
             assets,
             skills: [
+                { name: "IOT", icon: assets.iot },
                 { name: "PLC", icon: assets.plc },
                 { name: "HMI", icon: assets.hmi },
-                { name: "IOT", icon: assets.iot },
-                { name: "SERVO", icon: assets.servo },
                 { name: "INVERTER", icon: assets.inverter },
                 { name: "CNC", icon: assets.cnc },
+                { name: "SERVO", icon: assets.servo },
                 { name: "LARAVEL", icon: assets.laravel },
                 { name: "NODE", icon: assets.node },
                 { name: "GITHUB", icon: assets.github },
                 { name: "MQTT", icon: assets.mqtt },
 
             ],
-            activeTab: 'images',
+            activeTab: 'texts',
             projects: [
-                { id: 1, category: 'images', title: "تابلو برق توزیع", image: assets.post1 },
-                { id: 2, category: 'images', title: "خط لوله پلی اتیلن", image: assets.post3 },
-                { id: 3, category: 'images', title: "اتوماسیون ...", image: assets.post2 },
-                { id: 4, category: 'images', title: "تابلو دستگاه فوم بتن", image: assets.post4 },
-                // video
-                { id: 5, category: 'videos', title: "سیستم BMS", video: assets.vid1, desc: "اجرای کامل سیستم هوشمند سازی ساختمان" },
-                { id: 6, category: 'videos', title: "کنترل MQTT", video: assets.vid2, desc: "کنترل از راه دور با بروکر MQTT" },
+                { id: 1, category: 'texts', title: "🎯 هدف سیستم", desc: 'ساخت یک پلتفرم مانیتورینگ و تحلیل داده مبتنی بر MQTT برای سیستم‌های صنعتی، BMS، خانه و باغ هوشمند به صورت SaaS و پروژه‌ای.' },
+                { id: 2, category: 'texts', title: "🧠 معماری کلان سیستم", desc: '' },
+                { id: 3, category: 'texts', title: "1️⃣ Laravel (Core Service)", desc: '' },
+                { id: 4, category: 'texts', title: "مسئولیت", desc: 'مسئول: مالک دیتابیس اصلی احراز هویت (Sanctum) مدیریت کاربران و نقش‌ها مدیریت پروژه‌ها مدیریت دستگاه‌ها مدیریت Topic Permissions Admin Panel API مرکزی AI Gateway (ارتباط با سرویس Python)' },
+                { id: 5, category: 'texts', title: "🔐 مالکیت داده", desc: 'Users Projects Devices Permissions Topic Access Rules Business Logic' },
+                { id: 6, category: 'texts', title: "2️⃣ Node.js (MQTT Gateway Service)", desc: '' },
+                { id: 7, category: 'texts', title: "مسئولیت", desc: 'اتصال دائم به MQTT Broker Subscribe به Topicها دریافت پیام‌ها ذخیره لاگ (فقط CREATE، بدون UPDATE) Publish کنترل‌ها به دستگاه‌ها WebSocket Server برای Nuxt فیلتر Topic بر اساس دسترسی کاربر' },
+                { id: 8, category: 'texts', title: "⚠️ مهم", desc: 'Node هیچ مالکیتی روی Business Logic ندارد. فقط Gateway + Realtime Layer است.' },
+                { id: 9, category: 'texts', title: "3️⃣ Python (Analytics Service)", desc: '' },
+                { id: 10, category: 'texts', title: "مسئولیت", desc: 'پردازش لاگ‌ها تولید جدول log_summary آماده‌سازی داده برای AI تحلیل مصرف، رفتار، هشدار پردازش Batch این سرویس فقط Read از لاگ و Write به جداول تحلیلی دارد.' },
+                { id: 11, category: 'texts', title: "4️⃣ Nuxt.js (Frontend)", desc: '' },
+                { id: 12, category: 'texts', title: "مسئولیت", desc: 'داشبورد مانیتورینگ دریافت Topicهای مجاز از Laravel اتصال WebSocket به Node نمایش Real-time Data نمودارها و گزارش‌ها' },
+                { id: 13, category: 'texts', title: "5️⃣ MQTT Broker (اختصاصی)", desc: '' },
+                { id: 14, category: 'texts', title: "مسئولیت", desc: 'مدیریت Connection دستگاه‌ها مدیریت Publish/Subscribe احراز هویت سطح Broker' },
+                { id: 15, category: 'texts', title: "6️⃣ Database مرکزی", desc: 'PostgreSQL (اصلی) Redis (Realtime / Cache) InfluxDB (در صورت نیاز Time-Series در آینده)' },
+                // media
+                { id: 16, category: 'media', title: "معماری سیستم", video: assets.vid1, desc: "مرجع اصلی معماری پروژه IoT/BMS" },
+                { id: 17, category: 'media', title: "کنترل MQTT", video: assets.vid2, desc: "تحلیل داده ها و آنالیزینگ" },
             ]
         };
     },
@@ -118,150 +132,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.instagram-profile {
-    max-width: 600px;
-    margin: auto;
-    padding: 10px 2px 2px;
-    font-family: sans-serif;
-}
-.profile-header {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: contain ;
-    border: 3px solid  #6366f1;
-    margin-right: 5px;
-}
-.profile-info h2 {
-    margin: 0;
-}
-.title {
-    color: #aaa;
-    font-size: 13px;
-}
-.stats {
-    display: flex;
-    gap: 30px;
-    margin: 15px 5px;
-}
-.stats div {
-    text-align: center;
-    font-size: 13px;
-}
-.stats span {
-    display: block;
-    font-size: 11px;
-    color: #aaa;
-}
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-.btn {
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    text-decoration: none;
-}
-.primary {
-    background: #6366f1;
-    color: #fff;
-}
-.secondary {
-    background: #2a2a30;
-    color: #fff;
-}
-.bio-section {
-    margin-bottom: 15px;
-    margin-right: 10px;
-}
-.highlights {
-    gap: 15px;
-}
-.highlights::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari, Opera */
-}
-.highlight-item {
-    min-width: 80px;          /* عرض ثابت برای هر هایلایت */
-    flex: 0 0 auto;
-    text-align: center;
-}
-.highlight-item img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #0c26ca;
-}
-.post-tabs {
-    justify-content: center;
-    margin-top: 20px;
-}
-.tabs-wrapper {
-    display: flex;
-    border-radius: 12px;
-}
-.tabs-wrapper button {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: #0c26ca;
-    transition: .15s ease;
-}
-.post-tabs button.active {
-    border-bottom: 2px solid #6366f1;
-}
-.post-tabs button i {
-    font-size: 20px;
-}
-.posts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    margin-top: 10px;
-}
-.post {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.post img {
-    width: 100%;
-    height: 250px;
-    object-fit: fill;
-}
-.video-wrapper {
-    grid-column: 1 / -1;
-    width: 100%;
-}
-.video-card {
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-}
-.video-card video {
-    width: 100%;
-    height:auto;
-    max-height: 80vh;
-    object-fit: contain;
-    display: block;
-    border-radius: 10px;
-}
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 6px;
-    background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
-    font-size: 12px;
-    color: silver;
-}
-</style>
-
