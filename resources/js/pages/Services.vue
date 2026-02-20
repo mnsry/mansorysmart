@@ -83,7 +83,6 @@
 export default {
     data() {
         const assets = window.assets;
-
         return {
             assets,
             skills: [
@@ -101,7 +100,7 @@ export default {
             ],
             activeTab: 'texts',
             projects: [
-                { id: 1, category: 'texts', title: "🎯 هدف سیستم", desc: 'ساخت یک پلتفرم مانیتورینگ و تحلیل داده مبتنی بر MQTT برای سیستم‌های صنعتی، BMS، خانه و باغ هوشمند به صورت SaaS و پروژه‌ای.' },
+                { id: 1, category: 'texts', title: "🎯 هدف سیستم", desc: 'ساخت یک پلتفرم مانیتورینگ و تحلیل داده مبتنی بر MQTT برای سیستم‌های صنعتی، BMS.' },
                 { id: 2, category: 'texts', title: "🧠 معماری کلان سیستم", desc: '' },
                 { id: 3, category: 'texts', title: "1️⃣ Laravel (Core Service)", desc: '' },
                 { id: 4, category: 'texts', title: "مسئولیت", desc: 'مسئول: مالک دیتابیس اصلی احراز هویت (Sanctum) مدیریت کاربران و نقش‌ها مدیریت پروژه‌ها مدیریت دستگاه‌ها مدیریت Topic Permissions Admin Panel API مرکزی AI Gateway (ارتباط با سرویس Python)' },

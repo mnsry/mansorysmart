@@ -61,13 +61,13 @@
     margin-right: 10px;
 }
 .highlights {
-    gap: 15px;
+    gap: 5px;
 }
 .highlights::-webkit-scrollbar {
     display: none;             /* Chrome, Safari, Opera */
 }
 .highlight-item {
-    min-width: 80px;          /* عرض ثابت برای هر هایلایت */
+    min-width: 73px;          /* عرض ثابت برای هر هایلایت */
     flex: 0 0 auto;
     text-align: center;
 }

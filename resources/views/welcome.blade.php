@@ -4,6 +4,7 @@
     <script>
         window.assets = {
             profile: "{{ asset('images/app/mansory.png') }}",
+            banner: "{{ asset('images/app/banner.png') }}",
             story: "{{ asset('images/app/mansory2.png') }}",
             plc: "{{ asset('images/story/plc.webp') }}",
             hmi: "{{ asset('images/story/hmi.png') }}",
@@ -23,8 +24,8 @@
             vid2: "{{ asset('videos/02.mp4') }}",
         }
         window.routes = {
-            {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}
             login: "{{ route('login') }}",
+            register: "{{ route('register') }}",
         };
     </script>
 

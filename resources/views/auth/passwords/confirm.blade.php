@@ -3,7 +3,9 @@
 @section('content')
     <div class="d-flex flex-column min-vh-100">
         <div class="form-signin w-100 m-auto">
-            <a class="btn w-100" href="{{ route('welcome') }}">MANSORY SMART</a>
+            <a class="btn w-100" href="{{ route('welcome') }}">
+                <img class="img-fluid" src="{{ asset('images/app/banner2.png') }}" alt="masoud">
+            </a>
             <form class="mt-4" method="POST" action="{{ route('password.confirm') }}">
                 @csrf
                 <div class="form-floating">

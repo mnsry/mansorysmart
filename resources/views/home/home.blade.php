@@ -6,6 +6,7 @@
             profile: "{{ asset('images/app/mansory.jpg') }}",
         }
         window.routes = {
+            {{--post: "{{ route('post', ['post' => '__ID__']) }}",--}}
             logout: "{{ route('logout') }}",
             panel: "{{ route('panel') }}",
         };
