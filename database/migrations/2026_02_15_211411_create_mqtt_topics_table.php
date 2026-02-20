@@ -13,53 +13,28 @@ return new class extends Migration
     {
         Schema::create('mqtt_topics', function (Blueprint $table) {
             $table->id();
-            // مالک تاپیک
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            // ترتیب نمایش در پنل
+            $table->unsignedBigInteger('device_id');
+            $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
             $table->integer('order')->default(1);
-            // آیا این تاپیک لاگ شود؟
+            $table->string('name', 100);
+            $table->string('topic', 255);
+            // 0:publish  1:subscribe
+            $table->boolean('direction')->default(0);
+            // 0:bit 1:word
+            $table->boolean('value_type')->default(0);
+            // ['DigitalInput', 'DigitalOutput', 'DigitalMemory', 'AnalogInput', 'AnalogOutput', 'Temp', 'TempSet']
+            $table->string('signal_type', 30)->default('DigitalOutput');
+            $table->string('unit', 20)->nullable(); // °C, bar, %, V
+            $table->tinyInteger('qos')->default(0);
+            $table->boolean('retain')->default(false);
+            $table->decimal('min_value', 12, 4)->nullable();
+            $table->decimal('max_value', 12, 4)->nullable();
             $table->boolean('log_enabled')->default(false);
-            // نام نمایشی در پنل
-            $table->string('name', 50);
-            // نام واقعی تاپیک در MQTT
-            $table->string('topic', 50);
-            /*
-                direction:
-                0 = publish (ارسال به دستگاه)
-                1 = subscribe (دریافت از دستگاه)
-            */
-            $table->enum('direction', ['publish', 'subscribe',])->default('publish');
-            //$table->boolean('direction')->default(false);
-
-            /*
-                data_type:
-                0 = bit (0/1)
-                1 = word (عدد)
-            */
-            $table->enum('type', ['bit', 'word',])->default('bit');
-            //$table->boolean('bit_word')->default(false);
-            /*
-                display_type (برای word):
-                0 = number
-                1 = chart
-                2 = progress
-            */
-            $table->enum('publish_word', ['number', 'chart', 'progress',])->default('number');
-            //$table->tinyInteger('publish_word')->default(0);
-
-            $table->integer('word_min_value')->nullable();
-            $table->integer('word_max_value')->nullable();
-            // فقط برای bit
-            $table->string('publish_icon_on',  100)->nullable();
-            $table->string('publish_icon_off', 100)->nullable();
-            // فعال/غیرفعال بودن تاپیک
             $table->boolean('is_active')->default(true);
+            $table->string('description')->nullable();
             $table->timestamps();
-            // هر کاربر می‌تواند topic مشابه کاربر دیگر داشته باشد
-            $table->unique(['user_id', 'topic']);
-            $table->index('user_id');
+            $table->unique(['device_id', 'topic']);
         });
-
     }
     /**
      * Reverse the migrations.
