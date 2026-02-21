@@ -14,8 +14,8 @@ class Ticket extends Model
     ];
 
     // Relations
-    public function customer()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Field;
@@ -74,4 +75,24 @@ class SearchController extends Controller
             'field' => $field_select,
         ]);
     }
+
+    public function userUpdate(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|min:5',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'mobile' => ['digits:11', 'unique:users,mobile,' . auth()->id()],
+        ]);
+//        $user = User::find(auth()->id());
+//        if($request->hasFile('avatar')){
+//            $path = $request->file('avatar')->store("users",['disk' => 'public']);
+//            $user->avatar = $path;
+//        }
+//        $user->name = $request->name;
+//        $user->mobile = $request->mobile;
+//        $user->save();
+
+        return back();
+    }
+
 }

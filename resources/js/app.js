@@ -10,9 +10,9 @@ import welcome from "./layouts/Welcome.vue";
 if (document.getElementById('welcome')) {
     createApp(welcome).mount("#welcome");
 }
-import AppPanel from './layouts/AppPanel.vue'
-if (document.getElementById('app-panel')) {
-    createApp(AppPanel).mount('#app-panel')
+import Panel from './layouts/Panel.vue'
+if (document.getElementById('panel')) {
+    createApp(Panel).mount('#panel')
 }
 
 import Mqtt from './layouts/Mqtt.vue'

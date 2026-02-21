@@ -29,7 +29,7 @@
             </p>
         </div>
 
-        <h6 class="small mb-1">📍  تخصص </h6>
+        <h6 class="small mb-1">📍  تخصص</h6>
         <div class="highlights d-flex overflow-auto">
             <div class="highlight-item d-flex flex-column align-items-center"
                  v-for="(skill, index) in skills" :key="skill.name">
@@ -100,13 +100,13 @@ export default {
             ],
             activeTab: 'texts',
             projects: [
-                { id: 1, category: 'texts', title: "🎯 هدف سیستم", desc: 'ساخت یک پلتفرم مانیتورینگ و تحلیل داده مبتنی بر MQTT برای سیستم‌های صنعتی، BMS.' },
+                { id: 1, category: 'texts', title: "🎯 هدف سیستم", desc: 'ساخت پلتفرم مانیتورینگ و تحلیل داده مبتنی بر MQTT برای سیستم‌های صنعتی، BMS.' },
                 { id: 2, category: 'texts', title: "🧠 معماری کلان سیستم", desc: '' },
                 { id: 3, category: 'texts', title: "1️⃣ Laravel (Core Service)", desc: '' },
-                { id: 4, category: 'texts', title: "مسئولیت", desc: 'مسئول: مالک دیتابیس اصلی احراز هویت (Sanctum) مدیریت کاربران و نقش‌ها مدیریت پروژه‌ها مدیریت دستگاه‌ها مدیریت Topic Permissions Admin Panel API مرکزی AI Gateway (ارتباط با سرویس Python)' },
-                { id: 5, category: 'texts', title: "🔐 مالکیت داده", desc: 'Users Projects Devices Permissions Topic Access Rules Business Logic' },
+                { id: 4, category: 'texts', title: "مسئولیت", desc: 'مالک دیتابیس اصلی احراز هویت - مدیریت کاربران و نقش‌ها - مدیریت پروژه‌ها - مدیریت دستگاه‌ها - مدیریت Topic Permissions Admin Panel API مرکزی - AI Gateway (ارتباط با سرویس Python)' },
+                { id: 5, category: 'texts', title: "🔐 مالکیت داده", desc: 'Users, Projects, Devices, Permissions, Topic, Access Rules, Business Logic' },
                 { id: 6, category: 'texts', title: "2️⃣ Node.js (MQTT Gateway Service)", desc: '' },
-                { id: 7, category: 'texts', title: "مسئولیت", desc: 'اتصال دائم به MQTT Broker Subscribe به Topicها دریافت پیام‌ها ذخیره لاگ (فقط CREATE، بدون UPDATE) Publish کنترل‌ها به دستگاه‌ها WebSocket Server برای Nuxt فیلتر Topic بر اساس دسترسی کاربر' },
+                { id: 7, category: 'texts', title: "مسئولیت", desc: 'اتصال دائم به MQTT Broker Subscribe به Topicها - دریافت پیام‌ها ذخیره لاگ (فقط CREATE، بدون UPDATE) - Publish کنترل‌ها به دستگاه‌ها WebSocket Server برای Nuxt فیلتر Topic بر اساس دسترسی کاربر' },
                 { id: 8, category: 'texts', title: "⚠️ مهم", desc: 'Node هیچ مالکیتی روی Business Logic ندارد. فقط Gateway + Realtime Layer است.' },
                 { id: 9, category: 'texts', title: "3️⃣ Python (Analytics Service)", desc: '' },
                 { id: 10, category: 'texts', title: "مسئولیت", desc: 'پردازش لاگ‌ها تولید جدول log_summary آماده‌سازی داده برای AI تحلیل مصرف، رفتار، هشدار پردازش Batch این سرویس فقط Read از لاگ و Write به جداول تحلیلی دارد.' },

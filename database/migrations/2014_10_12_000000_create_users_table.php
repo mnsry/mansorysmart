@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('mobile',14)->unique()->nullable();
             $table->string('email')->unique()->nullable();
-            $table->enum('source', ['LINK', 'PARTNER', 'GOOGLE', 'INSTAGRAM', 'DIVAR', 'CHANEL'])->nullable()->default('LINK');
             $table->boolean('is_active')->default(true);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

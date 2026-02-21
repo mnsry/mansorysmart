@@ -23,7 +23,6 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'email',
         'mobile',
         'password',
-        'source',
         'is_active',
     ];
 
@@ -60,29 +59,14 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     {
         return $this->belongsTo(self::class, 'user_id');
     }
-    // Relations
-    public function partners(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Partner::class);
-    }
-
-    public function customer(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(Customer::class);
-    }
-
-    public function uploads(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Mqtt::class);
-    }
 
     public function notifications(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Notification::class);
     }
 
-    public function activityLogs(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function tickets(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(ActivityLog::class);
+        return $this->hasMany(Ticket::class);
     }
 }
