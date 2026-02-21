@@ -1,13 +1,12 @@
 <template>
-    <div class="container py-4">
-
+    <div class="container">
+        {{ time }}
     </div>
 </template>
 
 
 <script>
 export default {
-    name: "Home",
     data() {
         return {
             time: ''

@@ -16,6 +16,6 @@ if (document.getElementById('panel')) {
 }
 
 import Mqtt from './layouts/Mqtt.vue'
-if (document.getElementById('app-mqtt')) {
-    createApp(Mqtt).mount('#app-mqtt')
+if (document.getElementById('mqtt')) {
+    createApp(Mqtt).mount('#mqtt')
 }

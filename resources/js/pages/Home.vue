@@ -3,19 +3,27 @@
         <img :src="assets.profile" class="rounded-5 mb-3 vcard-photo" alt="mansory">
         <h4 class="fw-bold farsi2">منصوری</h4>
         <p class="text-secondary mt-3">مهندس نرم افزار | برق صنعتی و اتوماسیون</p>
-        <div class="row mt-2">
-            <div class="col-4">
-                <a href="https://youtube.com/@mansorysmart" class="btn btn-outline-danger rounded-5"  target="_blank">
+        <div class="row mt-2 justify-content-center text-center">
+            <div class="col-auto">
+                <a href="https://youtube.com/@mansorysmart"
+                   class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center"
+                   style="width:45px; height:45px;"
+                   target="_blank">
                     <i class="bi bi-youtube fs-4"></i>
                 </a>
             </div>
-            <div class="col-4">
-                <a href="https://t.me/+989153903097" class="btn btn-outline-primary rounded-5" target="_blank">
+            <div class="col-auto">
+                <a href="https://t.me/+989153903097"
+                   class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
+                   style="width:45px; height:45px;"
+                   target="_blank">
                     <i class="bi bi-telegram fs-4"></i>
                 </a>
             </div>
-            <div class="col-4">
-                <a href="tel:09153903097" class="btn btn-outline-success rounded-5">
+            <div class="col-auto">
+                <a href="tel:09153903097"
+                   class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center"
+                   style="width:45px; height:45px;">
                     <i class="bi bi-telephone fs-4"></i>
                 </a>
             </div>
@@ -29,7 +37,6 @@
 
 <script>
 export default {
-    name: "Home",
     data() {
         return {
             assets: window.assets,

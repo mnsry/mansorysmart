@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-4">
+    <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="fw-bold mb-0">پروژه‌ها</h4>
             <button class="btn btn-primary">افزودن پروژه جدید</button>

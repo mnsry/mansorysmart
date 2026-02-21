@@ -35,7 +35,6 @@
 
 <script>
 export default {
-    name: 'Features',
     data() {
         return {
             assets: window.assets,

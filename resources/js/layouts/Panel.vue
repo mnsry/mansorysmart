@@ -36,7 +36,6 @@ import Downloads from '../pages/panel/Downloads.vue'
 import Features from '../pages/panel/Features.vue'
 
 export default {
-    name: 'AppPanel',
     components: { Home, Projects, Downloads, Features },
     data() {
         return {

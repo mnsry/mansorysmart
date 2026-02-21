@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-4">
+    <div class="container">
         <h4 class="fw-bold mb-3">امکانات و ابزارها</h4>
 
         <div class="row g-3">
@@ -13,7 +13,7 @@
                         <p class="card-text small text-muted flex-grow-1">
                             {{ feature.description }}
                         </p>
-                        <a class="btn btn-sm btn-outline-primary mt-auto" :href="routes.panel">
+                        <a class="btn btn-sm btn-outline-primary mt-auto" :href="routes.mqtt">
                             ورود
                         </a>
                     </div>
